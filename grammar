@@ -11,10 +11,14 @@ Atribuicao -> Identificador attrib Valor.
 Identificador ->  (letra)(letra_ou_numero)*.
 
 
-Valor -> Numero Operacao
+Valor -> Expressao
         | Texto.
 Numero -> numero.
-Operacao -> Operador Numero Operacao | .
+Expressao -> ExpressaoSoma.
+ExpressaoSoma -> ExpressaoMultiplicacao OperacaoSoma.
+OperacaoSoma -> OperadorSomador ExpressaoMultiplicacao | .
+ExpressaoMultiplicacao -> Numero OperacaoMultiplicacao.
+OperacaoMultiplicacao -> OperadorMultiplicador Numero | .
 
 
 Texto -> aspas texto aspas.
@@ -28,7 +32,8 @@ Operador_binario -> menor
     | menor_igual
     | maior_igual
     | diferente.
-Operador -> operador.
+OperadorSomador -> operador_soma | operador_subtracao.
+OperadorMultiplicador -> operador_multiplicacao | operador_divisao.
 Variavel -> Identificador
     | Valor.
 Entrada -> entrada.
