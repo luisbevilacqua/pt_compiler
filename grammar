@@ -1,40 +1,45 @@
-Programa -> Bloco Programa | .
+Programa -> Bloco Programa 
+          | .
 Bloco -> Comando ponto_e_virgula
-    | Estrutura_de_controle.
+       | Estrutura_de_controle.
 Comando -> Declaracao
-    | Entrada
-    | Saida.
+         | Entrada
+         | Saida.
 Declaracao -> Tipo Atribuicao.
 Tipo -> numero
-    | texto.
+      | texto.
 Atribuicao -> Identificador attrib Valor.
 Identificador ->  (letra)(letra_ou_numero)*.
 
 
 Valor -> Expressao
-        | Texto.
+       | Texto.
 Expressao -> ExpressaoSoma.
 ExpressaoSoma -> ExpressaoMultiplicacao OperacaoSoma
-                | abre_parenteses ExpressaoSoma fecha_parenteses.
-OperacaoSoma -> OperadorSomador ExpressaoMultiplicacao OperacaoSoma | .
+               | abre_parenteses ExpressaoSoma fecha_parenteses.
+OperacaoSoma -> OperadorSomador ExpressaoMultiplicacao OperacaoSoma
+              | .
 ExpressaoMultiplicacao -> Variavel OperacaoMultiplicacao.
-OperacaoMultiplicacao -> OperadorMultiplicador Variavel | .
+OperacaoMultiplicacao -> OperadorMultiplicador Variavel 
+                       | .
 Numero -> numero.
-OperadorSomador -> operador_soma | operador_subtracao.
-OperadorMultiplicador -> operador_multiplicacao | operador_divisao.
+OperadorSomador -> operador_soma 
+                 | operador_subtracao.
+OperadorMultiplicador -> operador_multiplicacao 
+                       | operador_divisao.
 
 Texto -> aspas texto aspas.
 Estrutura_de_controle -> faca abre_chaves Bloco fecha_chaves enquanto abre_parenteses Condicao fecha_parenteses
-    | se abre_parenteses Condicao fecha_parenteses abre_chaves Bloco fecha_chaves (senao abre_chaves Bloco fecha_chaves)?
-    | enquanto abre_parenteses Condicao fecha_parenteses abre_chaves Bloco fecha_chaves.
+                       | se abre_parenteses Condicao fecha_parenteses abre_chaves Bloco fecha_chaves (senao abre_chaves Bloco fecha_chaves)?
+                       | enquanto abre_parenteses Condicao fecha_parenteses abre_chaves Bloco fecha_chaves.
 Condicao -> Expressao Operador_binario Expressao.
 Operador_binario -> menor
-    | maior
-    | igual
-    | menor_igual
-    | maior_igual
-    | diferente.
+                  | maior
+                  | igual
+                  | menor_igual
+                  | maior_igual
+                  | diferente.
 Variavel -> Identificador
-            | Numero.
+          | Numero.
 Entrada -> entrada.
 Saida -> imprima (Expressao).
