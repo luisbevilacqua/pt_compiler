@@ -17,9 +17,9 @@ expressao :                     parenteses_expressao compoe_expressao |
 parenteses_expressao :          abre_parenteses expressao fecha_parenteses;
 compoe_expressao :              (operador_aritmetico expressao)*;
 estrutura_de_controle :         faca bloco_estrutura_de_controle enquanto condicao |
-                                se condicao bloco_estrutura_de_controle se_nao |
+                                se condicao bloco_estrutura_de_controle (se_nao)? |
                                 enquanto condicao bloco_estrutura_de_controle;
-se_nao :                        (senao bloco_estrutura_de_controle)?;
+se_nao :                        senao bloco_estrutura_de_controle;
 bloco_estrutura_de_controle :   abre_chaves (bloco)* fecha_chaves;
 condicao :                      abre_parenteses expressao_booleana fecha_parenteses;
 expressao_booleana :            expressao operador_binario expressao;
