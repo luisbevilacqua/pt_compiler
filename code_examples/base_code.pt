@@ -1,22 +1,22 @@
-número mínimo := 0.
-texto b := “Digite um número:”.
+número minimo := 0.
+texto b := "Digite um número".
 
 faça {
-  imprima(b).
-  número quantidade_de_numeros = entrada.
-} enquanto(quantidade_de_numeros < mínimo).
+  mostre(b).
+  número quantidade_de_numeros := entrada.
+} enquanto(quantidade_de_numeros < minimo)
 
-número números_gerados := 0.
+número numeros_gerados := 0.
 
-se(quantidade_de_numeros := 0) {
-  imprima("Nenhum número a ser gerado").
+se(quantidade_de_numeros = 0) {
+  mostre("Nenhum número a ser gerado").
 }
 senão {
-  número número_gerado := 0.
-  enquanto(números_gerados < quantidade_de_numeros){
-    número_gerado := 3 + número_gerado * 5,5 / números_gerados - 1.
-    imprima(número_gerado).
+  número numero_gerado := 0.
+  enquanto(numeros_gerados < quantidade_de_numeros){
+    numero_gerado := 3 + numero_gerado * 5,5 / numeros_gerados - 1.
+    mostre(numero_gerado).
 
-    números_gerados := números_gerados + 1.
+    numeros_gerados := numeros_gerados + 1.
   }
 }
