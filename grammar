@@ -1,0 +1,76 @@
+Programa ->                     Bloco Programa 
+                              | .
+Bloco ->                        Comando Fim_de_Instrucao
+                              | Estrutura_De_Controle.
+Comando ->                      Declaracao
+                              | Entrada
+                              | Saida.
+Declaracao ->                   Tipo Atribuicao.
+Atribuicao ->                   Identificador Operador_Atribuicao Valor_atribuido.
+Valor_atribuido ->              Expressao
+                              | Texto.
+Expressao ->                    ExpressaoSoma.
+ExpressaoSoma ->                ExpressaoMultiplicacao Compoe_Soma
+                              | Abre_Parenteses ExpressaoSoma Fecha_Parenteses.
+Compoe_Soma ->                  Operador_Soma ExpressaoMultiplicacao Compoe_Soma
+                              | .
+ExpressaoMultiplicacao ->       Valor Compoe_Multiplicacao.
+Compoe_Multiplicacao ->         Operador_Multiplicacao Valor 
+                              | .
+Operador_Soma ->                Operador_Adicao 
+                              | Operador_Subtracao.
+Operador_Multiplicacao ->       Operador_Produto 
+                              | Operador_Divisao.
+Estrutura_De_Controle ->        Faca Bloco_Estrutura_De_Controle Enquanto Condicao
+                              | Se Condicao Bloco_Estrutura_De_Controle Se_Nao
+                              | Enquanto Condicao Bloco_Estrutura_De_Controle.
+Se_Nao ->                       Senao Bloco_Estrutura_De_Controle.
+Bloco_Estrutura_De_Controle ->  Abre_Chaves Bloco Fecha_Chaves
+                              | .
+Condicao ->                     Abre_Parenteses Expressao_Booleana Fecha_Parenteses.
+Expressao_Booleana ->           Expressao Operador_binario Expressao.
+Valor ->                        Identificador
+                              | Numero.
+Saida ->                        Imprima Abre_Parenteses Expressao Fecha_Parenteses.
+
+
+/* TERMINALS */
+
+/* Symbols */
+Fim_de_Instrucao ->             ponto_e_virgula.
+Abre_Chaves ->                  abre_chaves.
+Fecha_Chaves ->                 fecha_chaves.
+Abre_Parenteses ->              abre_parenteses.
+Fecha_Parenteses ->             fecha_parenteses.
+
+/* Operators */
+Operador_binario ->             menor
+                              | maior
+                              | igual
+                              | menor_igual
+                              | maior_igual
+                              | diferente.
+Operador_Atribuicao ->          atribuicao.
+Operador_Adicao  ->             operador_adicao.
+Operador_Subtracao ->           operador_subtracao.
+Operador_Produto ->             operador_produto.
+Operador_Divisao ->             operador_divisao.
+
+/* Reserved words for types */
+Tipo ->                         numero
+                              | texto.
+
+/* RegEx-defined tokens */
+Numero ->                       regex_numero.
+Texto ->                        aspas regex_texto aspas.
+Identificador ->                regex_identificador.
+
+/* Reserved words for control structures */
+Faca ->                         faca.
+Enquanto ->                     enquanto.
+Se ->                           se.
+Senao ->                        senao.
+
+/* IO */
+Entrada ->                      entrada.
+Imprima ->                      imprima.
