@@ -14,7 +14,8 @@ Identificador ->  (letra)(letra_ou_numero)*.
 Valor -> Expressao
         | Texto.
 Expressao -> ExpressaoSoma.
-ExpressaoSoma -> ExpressaoMultiplicacao OperacaoSoma.
+ExpressaoSoma -> ExpressaoMultiplicacao OperacaoSoma
+                | abre_parenteses ExpressaoSoma fecha_parenteses.
 OperacaoSoma -> OperadorSomador ExpressaoMultiplicacao OperacaoSoma | .
 ExpressaoMultiplicacao -> Numero OperacaoMultiplicacao.
 OperacaoMultiplicacao -> OperadorMultiplicador Numero | .
