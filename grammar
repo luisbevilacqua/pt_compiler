@@ -13,13 +13,14 @@ Identificador ->  (letra)(letra_ou_numero)*.
 
 Valor -> Expressao
         | Texto.
-Numero -> numero.
 Expressao -> ExpressaoSoma.
 ExpressaoSoma -> ExpressaoMultiplicacao OperacaoSoma.
-OperacaoSoma -> OperadorSomador ExpressaoMultiplicacao | .
+OperacaoSoma -> OperadorSomador ExpressaoMultiplicacao OperacaoSoma | .
 ExpressaoMultiplicacao -> Numero OperacaoMultiplicacao.
 OperacaoMultiplicacao -> OperadorMultiplicador Numero | .
-
+Numero -> numero.
+OperadorSomador -> operador_soma | operador_subtracao.
+OperadorMultiplicador -> operador_multiplicacao | operador_divisao.
 
 Texto -> aspas texto aspas.
 Estrutura_de_controle -> faca abre_chaves Bloco fecha_chaves enquanto abre_parenteses Condicao fecha_parenteses
@@ -32,8 +33,6 @@ Operador_binario -> menor
     | menor_igual
     | maior_igual
     | diferente.
-OperadorSomador -> operador_soma | operador_subtracao.
-OperadorMultiplicador -> operador_multiplicacao | operador_divisao.
 Variavel -> Identificador
     | Valor.
 Entrada -> entrada.
