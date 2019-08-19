@@ -1,12 +1,12 @@
 número minimo := 0.
 texto b := "Digite um número".
 
-número quantidade_de_numeros := 0;
+número quantidade_de_numeros := 0.
 
 faça {
   mostre(b).
-  quantidade_de_numeros := leia.
-} enquanto(quantidade_de_numeros < minimo)
+  quantidade_de_numeros := leia_número.
+} enquanto(quantidade_de_numeros < minimo).
 
 número numeros_gerados := 0.
 
