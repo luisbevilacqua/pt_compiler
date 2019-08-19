@@ -51,7 +51,7 @@ class PtGrammarListener(ParseTreeListener):
     def enterPrograma(self, ctx:PtGrammarParser.ProgramaContext):
         self.content.append("import java.util.Scanner;")
         self.content.append("class Main {")
-        self.content.append("public static void main(String *args) {")
+        self.content.append("public static void main(String args[]) {")
         self.content.append("Scanner _input = new Scanner(System.in);")
         pass
 
@@ -212,8 +212,8 @@ class PtGrammarListener(ParseTreeListener):
     # Enter a parse tree produced by PtGrammarParser#numero.
     def enterNumero(self, ctx:PtGrammarParser.NumeroContext):
         number = ctx.getText()
-        parsedNumber.replace(',', '.')
-        self.content.append(f'float({parsedNumber})')
+        parsedNumber = number.replace(',', '.')
+        self.content.append(f'(float)({parsedNumber})')
 
     # Exit a parse tree produced by PtGrammarParser#numero.
     def exitNumero(self, ctx:PtGrammarParser.NumeroContext):
@@ -233,9 +233,9 @@ class PtGrammarListener(ParseTreeListener):
     def enterTipo(self, ctx:PtGrammarParser.TipoContext):
         type = ctx.getText()
         if type == 'texto':
-            self.content.append('String')
+            self.content.append('String ')
         else:
-            self.content.append('float')
+            self.content.append('float ')
 
     # Exit a parse tree produced by PtGrammarParser#tipo.
     def exitTipo(self, ctx:PtGrammarParser.TipoContext):
@@ -366,12 +366,20 @@ class PtGrammarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PtGrammarParser#entrada.
-    def enterEntrada(self, ctx:PtGrammarParser.EntradaContext):
+    # Enter a parse tree produced by PtGrammarParser#entrada_de_texto.
+    def enterEntrada_de_texto(self, ctx:PtGrammarParser.EntradaContext):
         self.content.append('_input.next()')
 
-    # Exit a parse tree produced by PtGrammarParser#entrada.
-    def exitEntrada(self, ctx:PtGrammarParser.EntradaContext):
+    # Exit a parse tree produced by PtGrammarParser#entrada_de_texto.
+    def exitEntrada_de_texto(self, ctx:PtGrammarParser.EntradaContext):
+        pass
+
+    # Enter a parse tree produced by PtGrammarParser#entrada_numerica.
+    def enterEntrada_numerica(self, ctx:PtGrammarParser.EntradaContext):
+        self.content.append('_input.nextFloat()')
+
+    # Exit a parse tree produced by PtGrammarParser#entrada_numerica.
+    def exitEntrada_numerica(self, ctx:PtGrammarParser.EntradaContext):
         pass
 
 
