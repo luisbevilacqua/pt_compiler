@@ -57,11 +57,6 @@ class PtGrammarListenerC(ParseTreeListener):
             raise Exception(exc)
         else:
             self.content.add_variable(type, identifier)
-        # if type == 'texto':
-        #     size_of_text = len(ctx.atribuicao().valor_atribuido().getText())
-        #     self.content.append(f"char [{size_of_text}]")
-        # else:
-        #     self.content.append('float ')
 
     # Exit a parse tree produced by PtGrammarParser#declaracao.
     def exitDeclaracao(self, ctx:PtGrammarParser.DeclaracaoContext):
