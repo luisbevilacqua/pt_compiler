@@ -69,9 +69,6 @@ class PtGrammarListenerJava(ParseTreeListener):
         if not self.content.already_declared(identifier):
             exc = f'Variável {identifier} não declarada'
             raise Exception(exc)
-        # elif not self.content.types_match(identifier, type):
-        #     exc = f'Variável {identifier} declarada previamente com outro tipo'
-        #     raise Exception(exc)
 
     # Exit a parse tree produced by PtGrammarParser#atribuicao.
     def exitAtribuicao(self, ctx:PtGrammarParser.AtribuicaoContext):
