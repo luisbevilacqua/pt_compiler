@@ -50,10 +50,11 @@ class PtGrammarListenerJava(ParseTreeListener):
         identifier = ctx.atribuicao().identificador().getText()
         type = ctx.tipo().getText()
 
-        # if alreadyDeclared(identifier):
-        #    raise f'Variável {identifier} declarada múltiplas vezes'
-        # else:
-        #   addVariable(type, identifier)
+        if self.content.already_declared(identifier):
+            exc = f'Variável {identifier} declarada múltiplas vezes'
+            raise Exception(exc)
+        else:
+            self.content.add_variable(type, identifier)
 
     # Exit a parse tree produced by PtGrammarParser#declaracao.
     def exitDeclaracao(self, ctx:PtGrammarParser.DeclaracaoContext):
@@ -65,10 +66,12 @@ class PtGrammarListenerJava(ParseTreeListener):
         identifier = ctx.identificador().getText()
         type = self.getIdentifierType(identifier)
 
-        # if !alreadyDeclared(identifier):
-        #   raise f'Variável {identifier} não declarada'
-        # elsif !matchingType(identifier, type)
-        #   raise f'Variável {identifier} declarada previamente com outro tipo'
+        if not self.content.already_declared(identifier):
+            exc = f'Variável {identifier} não declarada'
+            raise Exception(exc)
+        # elif not self.content.types_match(identifier, type):
+        #     exc = f'Variável {identifier} declarada previamente com outro tipo'
+        #     raise Exception(exc)
 
     # Exit a parse tree produced by PtGrammarParser#atribuicao.
     def exitAtribuicao(self, ctx:PtGrammarParser.AtribuicaoContext):
