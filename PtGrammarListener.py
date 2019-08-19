@@ -10,9 +10,9 @@ class PtGrammarListener(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#programa.
     def enterPrograma(self, ctx:PtGrammarParser.ProgramaContext):
-        print("import Java.util.scanner;")
+        print("import java.util.Scanner;")
         print("class Main {")
-        print("public static main(String *args) {")
+        print("public static void main(String args[]) {")
         print("Scanner _input = new Scanner(System.in);")
         pass
 
@@ -173,8 +173,8 @@ class PtGrammarListener(ParseTreeListener):
     # Enter a parse tree produced by PtGrammarParser#numero.
     def enterNumero(self, ctx:PtGrammarParser.NumeroContext):
         number = ctx.getText()
-        number.replace(',', '.')
-        print(f'float({number})')
+        parsedNumber = number.replace(',', '.')
+        print(f'(float)({parsedNumber})')
 
     # Exit a parse tree produced by PtGrammarParser#numero.
     def exitNumero(self, ctx:PtGrammarParser.NumeroContext):
