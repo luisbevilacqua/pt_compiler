@@ -7,28 +7,26 @@ else:
     from PtGrammarParser import PtGrammarParser
 
 # This class defines a complete listener for a parse tree produced by PtGrammarParser.
-class PtGrammarListenerJava(ParseTreeListener):
+class PtGrammarListenerC(ParseTreeListener):
 
     def __init__(self, output_file=None):
-        self.content = StoreProgram('java', output_file)
+        self.content = StoreProgram('c', output_file)
 
     # Enter a parse tree produced by PtGrammarParser#programa.
     def enterPrograma(self, ctx:PtGrammarParser.ProgramaContext):
-        self.content.append("import java.util.Scanner;")
-        self.content.append("class Main {")
-        self.content.append("public static void main(String args[]) {")
-        self.content.append("Scanner _input = new Scanner(System.in);")
+        self.content.append("int main() {")
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#programa.
     def exitPrograma(self, ctx:PtGrammarParser.ProgramaContext):
-        self.content.append("}")
         self.content.append("}")
         pass
 
 
     # Enter a parse tree produced by PtGrammarParser#bloco.
     def enterBloco(self, ctx:PtGrammarParser.BlocoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#bloco.
@@ -38,6 +36,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#comando.
     def enterComando(self, ctx:PtGrammarParser.ComandoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#comando.
@@ -50,10 +49,8 @@ class PtGrammarListenerJava(ParseTreeListener):
         identifier = ctx.atribuicao().identificador().getText()
         type = ctx.tipo().getText()
 
-        # if alreadyDeclared(identifier):
-        #    raise f'Variável {identifier} declarada múltiplas vezes'
-        # else:
-        #   addVariable(type, identifier)
+        # print(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#declaracao.
     def exitDeclaracao(self, ctx:PtGrammarParser.DeclaracaoContext):
@@ -62,21 +59,19 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#atribuicao.
     def enterAtribuicao(self, ctx:PtGrammarParser.AtribuicaoContext):
-        identifier = ctx.identificador().getText()
-        type = self.getIdentifierType(identifier)
-
-        # if !alreadyDeclared(identifier):
-        #   raise f'Variável {identifier} não declarada'
-        # elsif !matchingType(identifier, type)
-        #   raise f'Variável {identifier} declarada previamente com outro tipo'
+        # print(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#atribuicao.
     def exitAtribuicao(self, ctx:PtGrammarParser.AtribuicaoContext):
+        identifier = ctx.identificador().getText()
+        type = self.getIdentifierType(identifier)
         pass
 
 
     # Enter a parse tree produced by PtGrammarParser#valor_atribuido.
     def enterValor_atribuido(self, ctx:PtGrammarParser.Valor_atribuidoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#valor_atribuido.
@@ -86,6 +81,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#expressao.
     def enterExpressao(self, ctx:PtGrammarParser.ExpressaoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#expressao.
@@ -95,6 +91,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#parenteses_expressao.
     def enterParenteses_expressao(self, ctx:PtGrammarParser.Parenteses_expressaoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#parenteses_expressao.
@@ -104,6 +101,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#compoe_expressao.
     def enterCompoe_expressao(self, ctx:PtGrammarParser.Compoe_expressaoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#compoe_expressao.
@@ -113,6 +111,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#estrutura_de_controle.
     def enterEstrutura_de_controle(self, ctx:PtGrammarParser.Estrutura_de_controleContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#estrutura_de_controle.
@@ -122,6 +121,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#se_nao.
     def enterSe_nao(self, ctx:PtGrammarParser.Se_naoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#se_nao.
@@ -131,6 +131,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#bloco_estrutura_de_controle.
     def enterBloco_estrutura_de_controle(self, ctx:PtGrammarParser.Bloco_estrutura_de_controleContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#bloco_estrutura_de_controle.
@@ -140,6 +141,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#condicao.
     def enterCondicao(self, ctx:PtGrammarParser.CondicaoContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#condicao.
@@ -149,6 +151,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#expressao_booleana.
     def enterExpressao_booleana(self, ctx:PtGrammarParser.Expressao_booleanaContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#expressao_booleana.
@@ -158,6 +161,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#valor.
     def enterValor(self, ctx:PtGrammarParser.ValorContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#valor.
@@ -167,6 +171,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#saida.
     def enterSaida(self, ctx:PtGrammarParser.SaidaContext):
+        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#saida.
@@ -179,6 +184,7 @@ class PtGrammarListenerJava(ParseTreeListener):
         number = ctx.getText()
         parsedNumber = number.replace(',', '.')
         self.content.append(f'(float)({parsedNumber})')
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#numero.
     def exitNumero(self, ctx:PtGrammarParser.NumeroContext):
@@ -188,6 +194,7 @@ class PtGrammarListenerJava(ParseTreeListener):
     # Enter a parse tree produced by PtGrammarParser#identificador.
     def enterIdentificador(self, ctx:PtGrammarParser.IdentificadorContext):
         self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#identificador.
     def exitIdentificador(self, ctx:PtGrammarParser.IdentificadorContext):
@@ -196,9 +203,10 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#tipo.
     def enterTipo(self, ctx:PtGrammarParser.TipoContext):
+        # import ipdb; ipdb.set_trace()
         type = ctx.getText()
         if type == 'texto':
-            self.content.append('String ')
+            self.content.append('char [] ')
         else:
             self.content.append('float ')
 
@@ -209,7 +217,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#texto.
     def enterTexto(self, ctx:PtGrammarParser.TextoContext):
-        self.content.append(f'new String({ctx.getText()})')
+        self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#texto.
     def exitTexto(self, ctx:PtGrammarParser.TextoContext):
@@ -223,7 +232,6 @@ class PtGrammarListenerJava(ParseTreeListener):
             self.content.append('==')
         else:
             self.content.append(operator)
-        pass
 
     # Exit a parse tree produced by PtGrammarParser#operador_binario.
     def exitOperador_binario(self, ctx:PtGrammarParser.Operador_binarioContext):
@@ -233,6 +241,7 @@ class PtGrammarListenerJava(ParseTreeListener):
     # Enter a parse tree produced by PtGrammarParser#operador_aritmetico.
     def enterOperador_aritmetico(self, ctx:PtGrammarParser.Operador_aritmeticoContext):
         self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#operador_aritmetico.
     def exitOperador_aritmetico(self, ctx:PtGrammarParser.Operador_aritmeticoContext):
@@ -241,7 +250,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#fim_de_instrucao.
     def enterFim_de_instrucao(self, ctx:PtGrammarParser.Fim_de_instrucaoContext):
-        self.content.append(';')
+        # print(ctx.getText())
+        self.content.append(";")
         pass
 
     # Exit a parse tree produced by PtGrammarParser#fim_de_instrucao.
@@ -251,7 +261,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#operador_atribuicao.
     def enterOperador_atribuicao(self, ctx:PtGrammarParser.Operador_atribuicaoContext):
-        self.content.append('=')
+        # print(ctx.getText())
+        self.content.append("=")
         pass
 
     # Exit a parse tree produced by PtGrammarParser#operador_atribuicao.
@@ -261,7 +272,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#abre_parenteses.
     def enterAbre_parenteses(self, ctx:PtGrammarParser.Abre_parentesesContext):
-        self.content.append('(')
+        self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#abre_parenteses.
     def exitAbre_parenteses(self, ctx:PtGrammarParser.Abre_parentesesContext):
@@ -270,7 +282,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#fecha_parenteses.
     def enterFecha_parenteses(self, ctx:PtGrammarParser.Fecha_parentesesContext):
-        self.content.append(')')
+        self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#fecha_parenteses.
     def exitFecha_parenteses(self, ctx:PtGrammarParser.Fecha_parentesesContext):
@@ -279,7 +292,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#abre_chaves.
     def enterAbre_chaves(self, ctx:PtGrammarParser.Abre_chavesContext):
-        self.content.append('{')
+        self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#abre_chaves.
     def exitAbre_chaves(self, ctx:PtGrammarParser.Abre_chavesContext):
@@ -288,7 +302,8 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#fecha_chaves.
     def enterFecha_chaves(self, ctx:PtGrammarParser.Fecha_chavesContext):
-        self.content.append('}')
+        self.content.append(ctx.getText())
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#fecha_chaves.
     def exitFecha_chaves(self, ctx:PtGrammarParser.Fecha_chavesContext):
@@ -297,7 +312,9 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#faca.
     def enterFaca(self, ctx:PtGrammarParser.FacaContext):
-        self.content.append('do')
+        # print(ctx.getText())
+        self.content.append("do")
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#faca.
     def exitFaca(self, ctx:PtGrammarParser.FacaContext):
@@ -306,7 +323,9 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#enquanto.
     def enterEnquanto(self, ctx:PtGrammarParser.EnquantoContext):
-        self.content.append('while')
+        # print(ctx.getText())
+        self.content.append("while")
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#enquanto.
     def exitEnquanto(self, ctx:PtGrammarParser.EnquantoContext):
@@ -315,7 +334,9 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#se.
     def enterSe(self, ctx:PtGrammarParser.SeContext):
-        self.content.append('if')
+        # print(ctx.getText())
+        self.content.append("if")
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#se.
     def exitSe(self, ctx:PtGrammarParser.SeContext):
@@ -324,7 +345,9 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#senao.
     def enterSenao(self, ctx:PtGrammarParser.SenaoContext):
-        self.content.append('else')
+        # print(ctx.getText())
+        self.content.append("else")
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#senao.
     def exitSenao(self, ctx:PtGrammarParser.SenaoContext):
@@ -333,7 +356,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#entrada_de_texto.
     def enterEntrada_de_texto(self, ctx:PtGrammarParser.EntradaContext):
-        self.content.append('_input.next()')
+        self.content.append('getchar()')
 
     # Exit a parse tree produced by PtGrammarParser#entrada_de_texto.
     def exitEntrada_de_texto(self, ctx:PtGrammarParser.EntradaContext):
@@ -341,7 +364,7 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#entrada_numerica.
     def enterEntrada_numerica(self, ctx:PtGrammarParser.EntradaContext):
-        self.content.append('_input.nextFloat()')
+        self.content.append('getchar(seila)')
 
     # Exit a parse tree produced by PtGrammarParser#entrada_numerica.
     def exitEntrada_numerica(self, ctx:PtGrammarParser.EntradaContext):
@@ -350,12 +373,13 @@ class PtGrammarListenerJava(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#imprima.
     def enterImprima(self, ctx:PtGrammarParser.ImprimaContext):
-        self.content.append('System.out.println')
+        # print(ctx.getText())
+        self.content.append( "printf")
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#imprima.
     def exitImprima(self, ctx:PtGrammarParser.ImprimaContext):
         pass
-
 
     def getIdentifierType(self, identifier):
         return 'texto'
