@@ -26,7 +26,7 @@ def compile(input_file, output_file, language):
     stream = CommonTokenStream(lexer)
     parser = PtGrammarParser(stream)
     tree = parser.programa()
-    printer = PtGrammarListener()
+    printer = PtGrammarListener(language, output_file)
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
 
@@ -37,7 +37,6 @@ def main(args):
     language = args.language
     if input_file:
         content = get_file_content(input_file)
-        print(f"The file content is:\n{content}")
     else: 
         content=None
     
