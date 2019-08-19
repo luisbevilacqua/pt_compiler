@@ -41,7 +41,7 @@ class StoreProgram():
 
 
 # This class defines a complete listener for a parse tree produced by PtGrammarParser.
-class PtGrammarListener(ParseTreeListener):
+class PtGrammarListenerJava(ParseTreeListener):
 
     def __init__(self, language, output_file=None):
         self.content = StoreProgram(language, output_file)
