@@ -14,8 +14,13 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#programa.
     def enterPrograma(self, ctx:PtGrammarParser.ProgramaContext):
+        self.content.append("#include <stdio.h>\n")
+        self.content.append("#include <string>\n")
+        self.content.append("#include <iostream>\n")
+        self.content.append("using namespace std;\n")
+
         self.content.append("int main() {")
-        # print(ctx.getText())
+        self.content.append("int aux_int;")
         pass
 
     # Exit a parse tree produced by PtGrammarParser#programa.
@@ -26,7 +31,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#bloco.
     def enterBloco(self, ctx:PtGrammarParser.BlocoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#bloco.
@@ -36,7 +40,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#comando.
     def enterComando(self, ctx:PtGrammarParser.ComandoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#comando.
@@ -49,8 +52,16 @@ class PtGrammarListenerC(ParseTreeListener):
         identifier = ctx.atribuicao().identificador().getText()
         type = ctx.tipo().getText()
 
-        # print(ctx.getText())
-        pass
+        if self.content.already_declared(identifier):
+            exc = f'Variável {identifier} declarada múltiplas vezes'
+            raise Exception(exc)
+        else:
+            self.content.add_variable(type, identifier)
+        # if type == 'texto':
+        #     size_of_text = len(ctx.atribuicao().valor_atribuido().getText())
+        #     self.content.append(f"char [{size_of_text}]")
+        # else:
+        #     self.content.append('float ')
 
     # Exit a parse tree produced by PtGrammarParser#declaracao.
     def exitDeclaracao(self, ctx:PtGrammarParser.DeclaracaoContext):
@@ -59,19 +70,19 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#atribuicao.
     def enterAtribuicao(self, ctx:PtGrammarParser.AtribuicaoContext):
-        # print(ctx.getText())
-        pass
+        identifier = ctx.identificador().getText()
+
+        if not self.content.already_declared(identifier):
+            exc = f'Variável {identifier} não declarada'
+            raise Exception(exc)
 
     # Exit a parse tree produced by PtGrammarParser#atribuicao.
     def exitAtribuicao(self, ctx:PtGrammarParser.AtribuicaoContext):
-        identifier = ctx.identificador().getText()
-        type = self.getIdentifierType(identifier)
         pass
 
 
     # Enter a parse tree produced by PtGrammarParser#valor_atribuido.
     def enterValor_atribuido(self, ctx:PtGrammarParser.Valor_atribuidoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#valor_atribuido.
@@ -81,7 +92,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#expressao.
     def enterExpressao(self, ctx:PtGrammarParser.ExpressaoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#expressao.
@@ -91,7 +101,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#parenteses_expressao.
     def enterParenteses_expressao(self, ctx:PtGrammarParser.Parenteses_expressaoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#parenteses_expressao.
@@ -101,7 +110,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#compoe_expressao.
     def enterCompoe_expressao(self, ctx:PtGrammarParser.Compoe_expressaoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#compoe_expressao.
@@ -111,7 +119,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#estrutura_de_controle.
     def enterEstrutura_de_controle(self, ctx:PtGrammarParser.Estrutura_de_controleContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#estrutura_de_controle.
@@ -121,7 +128,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#se_nao.
     def enterSe_nao(self, ctx:PtGrammarParser.Se_naoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#se_nao.
@@ -131,7 +137,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#bloco_estrutura_de_controle.
     def enterBloco_estrutura_de_controle(self, ctx:PtGrammarParser.Bloco_estrutura_de_controleContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#bloco_estrutura_de_controle.
@@ -141,7 +146,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#condicao.
     def enterCondicao(self, ctx:PtGrammarParser.CondicaoContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#condicao.
@@ -151,7 +155,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#expressao_booleana.
     def enterExpressao_booleana(self, ctx:PtGrammarParser.Expressao_booleanaContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#expressao_booleana.
@@ -161,7 +164,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#valor.
     def enterValor(self, ctx:PtGrammarParser.ValorContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#valor.
@@ -171,7 +173,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#saida.
     def enterSaida(self, ctx:PtGrammarParser.SaidaContext):
-        # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by PtGrammarParser#saida.
@@ -183,13 +184,12 @@ class PtGrammarListenerC(ParseTreeListener):
     def enterNumero(self, ctx:PtGrammarParser.NumeroContext):
         number = ctx.getText()
         parsedNumber = number.replace(',', '.')
-        self.content.append(f'(float)({parsedNumber})')
+        self.content.append(f'(float){parsedNumber}')
         pass
 
     # Exit a parse tree produced by PtGrammarParser#numero.
     def exitNumero(self, ctx:PtGrammarParser.NumeroContext):
         pass
-
 
     # Enter a parse tree produced by PtGrammarParser#identificador.
     def enterIdentificador(self, ctx:PtGrammarParser.IdentificadorContext):
@@ -203,12 +203,12 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#tipo.
     def enterTipo(self, ctx:PtGrammarParser.TipoContext):
-        # import ipdb; ipdb.set_trace()
         type = ctx.getText()
         if type == 'texto':
-            self.content.append('char [] ')
+            self.content.append('string ')
         else:
             self.content.append('float ')
+        pass
 
     # Exit a parse tree produced by PtGrammarParser#tipo.
     def exitTipo(self, ctx:PtGrammarParser.TipoContext):
@@ -250,7 +250,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#fim_de_instrucao.
     def enterFim_de_instrucao(self, ctx:PtGrammarParser.Fim_de_instrucaoContext):
-        # print(ctx.getText())
         self.content.append(";")
         pass
 
@@ -261,7 +260,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#operador_atribuicao.
     def enterOperador_atribuicao(self, ctx:PtGrammarParser.Operador_atribuicaoContext):
-        # print(ctx.getText())
         self.content.append("=")
         pass
 
@@ -312,7 +310,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#faca.
     def enterFaca(self, ctx:PtGrammarParser.FacaContext):
-        # print(ctx.getText())
         self.content.append("do")
         pass
 
@@ -323,7 +320,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#enquanto.
     def enterEnquanto(self, ctx:PtGrammarParser.EnquantoContext):
-        # print(ctx.getText())
         self.content.append("while")
         pass
 
@@ -334,7 +330,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#se.
     def enterSe(self, ctx:PtGrammarParser.SeContext):
-        # print(ctx.getText())
         self.content.append("if")
         pass
 
@@ -345,7 +340,6 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#senao.
     def enterSenao(self, ctx:PtGrammarParser.SenaoContext):
-        # print(ctx.getText())
         self.content.append("else")
         pass
 
@@ -364,7 +358,7 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#entrada_numerica.
     def enterEntrada_numerica(self, ctx:PtGrammarParser.EntradaContext):
-        self.content.append('getchar(seila)')
+        self.content.append('scanf("%d", &aux_int) ')
 
     # Exit a parse tree produced by PtGrammarParser#entrada_numerica.
     def exitEntrada_numerica(self, ctx:PtGrammarParser.EntradaContext):
@@ -373,8 +367,8 @@ class PtGrammarListenerC(ParseTreeListener):
 
     # Enter a parse tree produced by PtGrammarParser#imprima.
     def enterImprima(self, ctx:PtGrammarParser.ImprimaContext):
-        # print(ctx.getText())
-        self.content.append( "printf")
+        # import ipdb; ipdb.set_trace()
+        self.content.append( "cout <<")
         pass
 
     # Exit a parse tree produced by PtGrammarParser#imprima.
