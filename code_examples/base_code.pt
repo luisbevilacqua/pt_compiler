@@ -1,9 +1,11 @@
 número minimo := 0.
 texto b := "Digite um número".
 
+número quantidade_de_numeros := 0;
+
 faça {
   mostre(b).
-  número quantidade_de_numeros := entrada.
+  quantidade_de_numeros := leia.
 } enquanto(quantidade_de_numeros < minimo)
 
 número numeros_gerados := 0.
@@ -14,7 +16,7 @@ se(quantidade_de_numeros = 0) {
 senão {
   número numero_gerado := 0.
   enquanto(numeros_gerados < quantidade_de_numeros){
-    numero_gerado := 3 + numero_gerado * 5,5 / numeros_gerados - 1.
+    numero_gerado := 3 - numero_gerado * 5,5 / (numeros_gerados + 1).
     mostre(numero_gerado).
 
     numeros_gerados := numeros_gerados + 1.
