@@ -9,7 +9,7 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3 ")
-        buf.write("\u00df\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u00d8\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
@@ -24,29 +24,28 @@ def serializedATN():
         buf.write("\3\r\3\r\7\r\u0095\n\r\f\r\16\r\u0098\13\r\3\r\3\r\3\16")
         buf.write("\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\20\3\20\3\20\5\20")
         buf.write("\u00a7\n\20\3\21\3\21\3\21\3\21\3\21\3\22\3\22\5\22\u00b0")
-        buf.write("\n\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26\3\26\7\26\u00ba")
-        buf.write("\n\26\f\26\16\26\u00bd\13\26\3\26\3\26\3\27\3\27\3\30")
-        buf.write("\3\30\3\31\3\31\3\32\3\32\3\33\3\33\3\34\3\34\3\35\3\35")
-        buf.write("\3\36\3\36\3\37\3\37\3 \3 \3!\3!\3\"\3\"\3#\3#\3$\3$\3")
-        buf.write("%\3%\3%\2\2&\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"")
-        buf.write("$&(*,.\60\62\64\668:<>@BDFH\2\6\3\2\3\4\3\2\5\5\3\2\6")
-        buf.write("\13\3\2\f\17\2\u00ca\2M\3\2\2\2\4V\3\2\2\2\6[\3\2\2\2")
-        buf.write("\b]\3\2\2\2\n`\3\2\2\2\fg\3\2\2\2\16o\3\2\2\2\20q\3\2")
-        buf.write("\2\2\22z\3\2\2\2\24\u008d\3\2\2\2\26\u008f\3\2\2\2\30")
-        buf.write("\u0092\3\2\2\2\32\u009b\3\2\2\2\34\u009f\3\2\2\2\36\u00a6")
-        buf.write("\3\2\2\2 \u00a8\3\2\2\2\"\u00af\3\2\2\2$\u00b1\3\2\2\2")
-        buf.write("&\u00b3\3\2\2\2(\u00b5\3\2\2\2*\u00b7\3\2\2\2,\u00c0\3")
-        buf.write("\2\2\2.\u00c2\3\2\2\2\60\u00c4\3\2\2\2\62\u00c6\3\2\2")
-        buf.write("\2\64\u00c8\3\2\2\2\66\u00ca\3\2\2\28\u00cc\3\2\2\2:\u00ce")
-        buf.write("\3\2\2\2<\u00d0\3\2\2\2>\u00d2\3\2\2\2@\u00d4\3\2\2\2")
-        buf.write("B\u00d6\3\2\2\2D\u00d8\3\2\2\2F\u00da\3\2\2\2H\u00dc\3")
+        buf.write("\n\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26\3\26\3\27\3\27")
+        buf.write("\3\30\3\30\3\31\3\31\3\32\3\32\3\33\3\33\3\34\3\34\3\35")
+        buf.write("\3\35\3\36\3\36\3\37\3\37\3 \3 \3!\3!\3\"\3\"\3#\3#\3")
+        buf.write("$\3$\3%\3%\3%\2\2&\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
+        buf.write("\36 \"$&(*,.\60\62\64\668:<>@BDFH\2\5\3\2\3\4\3\2\5\n")
+        buf.write("\3\2\13\16\2\u00c2\2M\3\2\2\2\4V\3\2\2\2\6[\3\2\2\2\b")
+        buf.write("]\3\2\2\2\n`\3\2\2\2\fg\3\2\2\2\16o\3\2\2\2\20q\3\2\2")
+        buf.write("\2\22z\3\2\2\2\24\u008d\3\2\2\2\26\u008f\3\2\2\2\30\u0092")
+        buf.write("\3\2\2\2\32\u009b\3\2\2\2\34\u009f\3\2\2\2\36\u00a6\3")
+        buf.write("\2\2\2 \u00a8\3\2\2\2\"\u00af\3\2\2\2$\u00b1\3\2\2\2&")
+        buf.write("\u00b3\3\2\2\2(\u00b5\3\2\2\2*\u00b7\3\2\2\2,\u00b9\3")
+        buf.write("\2\2\2.\u00bb\3\2\2\2\60\u00bd\3\2\2\2\62\u00bf\3\2\2")
+        buf.write("\2\64\u00c1\3\2\2\2\66\u00c3\3\2\2\28\u00c5\3\2\2\2:\u00c7")
+        buf.write("\3\2\2\2<\u00c9\3\2\2\2>\u00cb\3\2\2\2@\u00cd\3\2\2\2")
+        buf.write("B\u00cf\3\2\2\2D\u00d1\3\2\2\2F\u00d3\3\2\2\2H\u00d5\3")
         buf.write("\2\2\2JL\5\4\3\2KJ\3\2\2\2LO\3\2\2\2MK\3\2\2\2MN\3\2\2")
         buf.write("\2NP\3\2\2\2OM\3\2\2\2PQ\7\2\2\3Q\3\3\2\2\2RS\5\6\4\2")
         buf.write("ST\5\60\31\2TW\3\2\2\2UW\5\24\13\2VR\3\2\2\2VU\3\2\2\2")
         buf.write("W\5\3\2\2\2X\\\5\b\5\2Y\\\5 \21\2Z\\\5\n\6\2[X\3\2\2\2")
-        buf.write("[Y\3\2\2\2[Z\3\2\2\2\\\7\3\2\2\2]^\5(\25\2^_\5\n\6\2_")
+        buf.write("[Y\3\2\2\2[Z\3\2\2\2\\\7\3\2\2\2]^\5*\26\2^_\5\n\6\2_")
         buf.write("\t\3\2\2\2`a\5&\24\2ab\5\62\32\2bc\5\f\7\2c\13\3\2\2\2")
-        buf.write("dh\5\16\b\2eh\5*\26\2fh\5\"\22\2gd\3\2\2\2ge\3\2\2\2g")
+        buf.write("dh\5\16\b\2eh\5(\25\2fh\5\"\22\2gd\3\2\2\2ge\3\2\2\2g")
         buf.write("f\3\2\2\2h\r\3\2\2\2ij\5\20\t\2jk\5\22\n\2kp\3\2\2\2l")
         buf.write("m\5\36\20\2mn\5\22\n\2np\3\2\2\2oi\3\2\2\2ol\3\2\2\2p")
         buf.write("\17\3\2\2\2qr\5\64\33\2rs\5\16\b\2st\5\66\34\2t\21\3\2")
@@ -67,29 +66,26 @@ def serializedATN():
         buf.write("\5\64\33\2\u009c\u009d\5\34\17\2\u009d\u009e\5\66\34\2")
         buf.write("\u009e\33\3\2\2\2\u009f\u00a0\5\16\b\2\u00a0\u00a1\5,")
         buf.write("\27\2\u00a1\u00a2\5\16\b\2\u00a2\35\3\2\2\2\u00a3\u00a7")
-        buf.write("\5&\24\2\u00a4\u00a7\5$\23\2\u00a5\u00a7\5*\26\2\u00a6")
+        buf.write("\5&\24\2\u00a4\u00a7\5$\23\2\u00a5\u00a7\5(\25\2\u00a6")
         buf.write("\u00a3\3\2\2\2\u00a6\u00a4\3\2\2\2\u00a6\u00a5\3\2\2\2")
         buf.write("\u00a7\37\3\2\2\2\u00a8\u00a9\5H%\2\u00a9\u00aa\5\64\33")
         buf.write("\2\u00aa\u00ab\5\16\b\2\u00ab\u00ac\5\66\34\2\u00ac!\3")
         buf.write("\2\2\2\u00ad\u00b0\5D#\2\u00ae\u00b0\5F$\2\u00af\u00ad")
         buf.write("\3\2\2\2\u00af\u00ae\3\2\2\2\u00b0#\3\2\2\2\u00b1\u00b2")
-        buf.write("\7\35\2\2\u00b2%\3\2\2\2\u00b3\u00b4\7\36\2\2\u00b4\'")
-        buf.write("\3\2\2\2\u00b5\u00b6\t\2\2\2\u00b6)\3\2\2\2\u00b7\u00bb")
-        buf.write("\7\5\2\2\u00b8\u00ba\n\3\2\2\u00b9\u00b8\3\2\2\2\u00ba")
-        buf.write("\u00bd\3\2\2\2\u00bb\u00b9\3\2\2\2\u00bb\u00bc\3\2\2\2")
-        buf.write("\u00bc\u00be\3\2\2\2\u00bd\u00bb\3\2\2\2\u00be\u00bf\7")
-        buf.write("\5\2\2\u00bf+\3\2\2\2\u00c0\u00c1\t\4\2\2\u00c1-\3\2\2")
-        buf.write("\2\u00c2\u00c3\t\5\2\2\u00c3/\3\2\2\2\u00c4\u00c5\7\20")
-        buf.write("\2\2\u00c5\61\3\2\2\2\u00c6\u00c7\7\21\2\2\u00c7\63\3")
-        buf.write("\2\2\2\u00c8\u00c9\7\22\2\2\u00c9\65\3\2\2\2\u00ca\u00cb")
-        buf.write("\7\23\2\2\u00cb\67\3\2\2\2\u00cc\u00cd\7\24\2\2\u00cd")
-        buf.write("9\3\2\2\2\u00ce\u00cf\7\25\2\2\u00cf;\3\2\2\2\u00d0\u00d1")
-        buf.write("\7\26\2\2\u00d1=\3\2\2\2\u00d2\u00d3\7\27\2\2\u00d3?\3")
-        buf.write("\2\2\2\u00d4\u00d5\7\30\2\2\u00d5A\3\2\2\2\u00d6\u00d7")
-        buf.write("\7\31\2\2\u00d7C\3\2\2\2\u00d8\u00d9\7\32\2\2\u00d9E\3")
-        buf.write("\2\2\2\u00da\u00db\7\33\2\2\u00dbG\3\2\2\2\u00dc\u00dd")
-        buf.write("\7\34\2\2\u00ddI\3\2\2\2\16MV[goz\u0087\u008d\u0096\u00a6")
-        buf.write("\u00af\u00bb")
+        buf.write("\7\34\2\2\u00b2%\3\2\2\2\u00b3\u00b4\7\35\2\2\u00b4\'")
+        buf.write("\3\2\2\2\u00b5\u00b6\7\36\2\2\u00b6)\3\2\2\2\u00b7\u00b8")
+        buf.write("\t\2\2\2\u00b8+\3\2\2\2\u00b9\u00ba\t\3\2\2\u00ba-\3\2")
+        buf.write("\2\2\u00bb\u00bc\t\4\2\2\u00bc/\3\2\2\2\u00bd\u00be\7")
+        buf.write("\17\2\2\u00be\61\3\2\2\2\u00bf\u00c0\7\20\2\2\u00c0\63")
+        buf.write("\3\2\2\2\u00c1\u00c2\7\21\2\2\u00c2\65\3\2\2\2\u00c3\u00c4")
+        buf.write("\7\22\2\2\u00c4\67\3\2\2\2\u00c5\u00c6\7\23\2\2\u00c6")
+        buf.write("9\3\2\2\2\u00c7\u00c8\7\24\2\2\u00c8;\3\2\2\2\u00c9\u00ca")
+        buf.write("\7\25\2\2\u00ca=\3\2\2\2\u00cb\u00cc\7\26\2\2\u00cc?\3")
+        buf.write("\2\2\2\u00cd\u00ce\7\27\2\2\u00ceA\3\2\2\2\u00cf\u00d0")
+        buf.write("\7\30\2\2\u00d0C\3\2\2\2\u00d1\u00d2\7\31\2\2\u00d2E\3")
+        buf.write("\2\2\2\u00d3\u00d4\7\32\2\2\u00d4G\3\2\2\2\u00d5\u00d6")
+        buf.write("\7\33\2\2\u00d6I\3\2\2\2\rMV[goz\u0087\u008d\u0096\u00a6")
+        buf.write("\u00af")
         return buf.getvalue()
 
 
@@ -103,11 +99,11 @@ class PtGrammarParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'n\u00FAmero'", "'texto'", "'\"'", "'>'", 
-                     "'<'", "'>='", "'<='", "'<>'", "'='", "'+'", "'-'", 
-                     "'*'", "'/'", "'.'", "':='", "'('", "')'", "'{'", "'}'", 
-                     "'fa\u00E7a'", "'enquanto'", "'se'", "'sen\u00E3o'", 
-                     "'leia_texto'", "'leia_n\u00FAmero'", "'mostre'" ]
+    literalNames = [ "<INVALID>", "'n\u00FAmero'", "'texto'", "'>'", "'<'", 
+                     "'>='", "'<='", "'<>'", "'='", "'+'", "'-'", "'*'", 
+                     "'/'", "'.'", "':='", "'('", "')'", "'{'", "'}'", "'fa\u00E7a'", 
+                     "'enquanto'", "'se'", "'sen\u00E3o'", "'leia_texto'", 
+                     "'leia_n\u00FAmero'", "'mostre'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -115,8 +111,8 @@ class PtGrammarParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "TERMINAL_NUMERO", 
-                      "TERMINAL_IDENTIFICADOR", "WHITESPACE", "NEWLINE" ]
+                      "<INVALID>", "<INVALID>", "TERMINAL_NUMERO", "TERMINAL_IDENTIFICADOR", 
+                      "TERMINAL_TEXTO", "WHITESPACE", "NEWLINE" ]
 
     RULE_programa = 0
     RULE_bloco = 1
@@ -137,8 +133,8 @@ class PtGrammarParser ( Parser ):
     RULE_entrada = 16
     RULE_numero = 17
     RULE_identificador = 18
-    RULE_tipo = 19
-    RULE_texto = 20
+    RULE_texto = 19
+    RULE_tipo = 20
     RULE_operador_binario = 21
     RULE_operador_aritmetico = 22
     RULE_fim_de_instrucao = 23
@@ -160,7 +156,7 @@ class PtGrammarParser ( Parser ):
                    "compoe_expressao", "estrutura_de_controle", "se_nao", 
                    "bloco_estrutura_de_controle", "condicao", "expressao_booleana", 
                    "valor", "saida", "entrada", "numero", "identificador", 
-                   "tipo", "texto", "operador_binario", "operador_aritmetico", 
+                   "texto", "tipo", "operador_binario", "operador_aritmetico", 
                    "fim_de_instrucao", "operador_atribuicao", "abre_parenteses", 
                    "fecha_parenteses", "abre_chaves", "fecha_chaves", "faca", 
                    "enquanto", "se", "senao", "entrada_de_texto", "entrada_numerica", 
@@ -192,9 +188,9 @@ class PtGrammarParser ( Parser ):
     T__22=23
     T__23=24
     T__24=25
-    T__25=26
-    TERMINAL_NUMERO=27
-    TERMINAL_IDENTIFICADOR=28
+    TERMINAL_NUMERO=26
+    TERMINAL_IDENTIFICADOR=27
+    TERMINAL_TEXTO=28
     WHITESPACE=29
     NEWLINE=30
 
@@ -247,7 +243,7 @@ class PtGrammarParser ( Parser ):
             self.state = 75
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__0) | (1 << PtGrammarParser.T__1) | (1 << PtGrammarParser.T__19) | (1 << PtGrammarParser.T__20) | (1 << PtGrammarParser.T__21) | (1 << PtGrammarParser.T__25) | (1 << PtGrammarParser.TERMINAL_IDENTIFICADOR))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__0) | (1 << PtGrammarParser.T__1) | (1 << PtGrammarParser.T__18) | (1 << PtGrammarParser.T__19) | (1 << PtGrammarParser.T__20) | (1 << PtGrammarParser.T__24) | (1 << PtGrammarParser.TERMINAL_IDENTIFICADOR))) != 0):
                 self.state = 72
                 self.bloco()
                 self.state = 77
@@ -305,14 +301,14 @@ class PtGrammarParser ( Parser ):
             self.state = 84
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PtGrammarParser.T__0, PtGrammarParser.T__1, PtGrammarParser.T__25, PtGrammarParser.TERMINAL_IDENTIFICADOR]:
+            if token in [PtGrammarParser.T__0, PtGrammarParser.T__1, PtGrammarParser.T__24, PtGrammarParser.TERMINAL_IDENTIFICADOR]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 80
                 self.comando()
                 self.state = 81
                 self.fim_de_instrucao()
                 pass
-            elif token in [PtGrammarParser.T__19, PtGrammarParser.T__20, PtGrammarParser.T__21]:
+            elif token in [PtGrammarParser.T__18, PtGrammarParser.T__19, PtGrammarParser.T__20]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 83
                 self.estrutura_de_controle()
@@ -374,7 +370,7 @@ class PtGrammarParser ( Parser ):
                 self.state = 86
                 self.declaracao()
                 pass
-            elif token in [PtGrammarParser.T__25]:
+            elif token in [PtGrammarParser.T__24]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 87
                 self.saida()
@@ -604,14 +600,14 @@ class PtGrammarParser ( Parser ):
             self.state = 109
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PtGrammarParser.T__15]:
+            if token in [PtGrammarParser.T__14]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 103
                 self.parenteses_expressao()
                 self.state = 104
                 self.compoe_expressao()
                 pass
-            elif token in [PtGrammarParser.T__2, PtGrammarParser.TERMINAL_NUMERO, PtGrammarParser.TERMINAL_IDENTIFICADOR]:
+            elif token in [PtGrammarParser.TERMINAL_NUMERO, PtGrammarParser.TERMINAL_IDENTIFICADOR, PtGrammarParser.TERMINAL_TEXTO]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 106
                 self.valor()
@@ -802,7 +798,7 @@ class PtGrammarParser ( Parser ):
             self.state = 139
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PtGrammarParser.T__19]:
+            if token in [PtGrammarParser.T__18]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 123
                 self.faca()
@@ -815,7 +811,7 @@ class PtGrammarParser ( Parser ):
                 self.state = 127
                 self.fim_de_instrucao()
                 pass
-            elif token in [PtGrammarParser.T__21]:
+            elif token in [PtGrammarParser.T__20]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 129
                 self.se()
@@ -826,13 +822,13 @@ class PtGrammarParser ( Parser ):
                 self.state = 133
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==PtGrammarParser.T__22:
+                if _la==PtGrammarParser.T__21:
                     self.state = 132
                     self.se_nao()
 
 
                 pass
-            elif token in [PtGrammarParser.T__20]:
+            elif token in [PtGrammarParser.T__19]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 135
                 self.enquanto()
@@ -947,7 +943,7 @@ class PtGrammarParser ( Parser ):
             self.state = 148
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__0) | (1 << PtGrammarParser.T__1) | (1 << PtGrammarParser.T__19) | (1 << PtGrammarParser.T__20) | (1 << PtGrammarParser.T__21) | (1 << PtGrammarParser.T__25) | (1 << PtGrammarParser.TERMINAL_IDENTIFICADOR))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__0) | (1 << PtGrammarParser.T__1) | (1 << PtGrammarParser.T__18) | (1 << PtGrammarParser.T__19) | (1 << PtGrammarParser.T__20) | (1 << PtGrammarParser.T__24) | (1 << PtGrammarParser.TERMINAL_IDENTIFICADOR))) != 0):
                 self.state = 145
                 self.bloco()
                 self.state = 150
@@ -1120,7 +1116,7 @@ class PtGrammarParser ( Parser ):
                 self.state = 162
                 self.numero()
                 pass
-            elif token in [PtGrammarParser.T__2]:
+            elif token in [PtGrammarParser.TERMINAL_TEXTO]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 163
                 self.texto()
@@ -1232,12 +1228,12 @@ class PtGrammarParser ( Parser ):
             self.state = 173
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PtGrammarParser.T__23]:
+            if token in [PtGrammarParser.T__22]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 171
                 self.entrada_de_texto()
                 pass
-            elif token in [PtGrammarParser.T__24]:
+            elif token in [PtGrammarParser.T__23]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 172
                 self.entrada_numerica()
@@ -1334,6 +1330,46 @@ class PtGrammarParser ( Parser ):
         return localctx
 
 
+    class TextoContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def TERMINAL_TEXTO(self):
+            return self.getToken(PtGrammarParser.TERMINAL_TEXTO, 0)
+
+        def getRuleIndex(self):
+            return PtGrammarParser.RULE_texto
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTexto" ):
+                listener.enterTexto(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTexto" ):
+                listener.exitTexto(self)
+
+
+
+
+    def texto(self):
+
+        localctx = PtGrammarParser.TextoContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 38, self.RULE_texto)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 179
+            self.match(PtGrammarParser.TERMINAL_TEXTO)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
     class TipoContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1358,73 +1394,17 @@ class PtGrammarParser ( Parser ):
     def tipo(self):
 
         localctx = PtGrammarParser.TipoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_tipo)
+        self.enterRule(localctx, 40, self.RULE_tipo)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 179
+            self.state = 181
             _la = self._input.LA(1)
             if not(_la==PtGrammarParser.T__0 or _la==PtGrammarParser.T__1):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class TextoContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-
-        def getRuleIndex(self):
-            return PtGrammarParser.RULE_texto
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTexto" ):
-                listener.enterTexto(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTexto" ):
-                listener.exitTexto(self)
-
-
-
-
-    def texto(self):
-
-        localctx = PtGrammarParser.TextoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_texto)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 181
-            self.match(PtGrammarParser.T__2)
-            self.state = 185
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__0) | (1 << PtGrammarParser.T__1) | (1 << PtGrammarParser.T__3) | (1 << PtGrammarParser.T__4) | (1 << PtGrammarParser.T__5) | (1 << PtGrammarParser.T__6) | (1 << PtGrammarParser.T__7) | (1 << PtGrammarParser.T__8) | (1 << PtGrammarParser.T__9) | (1 << PtGrammarParser.T__10) | (1 << PtGrammarParser.T__11) | (1 << PtGrammarParser.T__12) | (1 << PtGrammarParser.T__13) | (1 << PtGrammarParser.T__14) | (1 << PtGrammarParser.T__15) | (1 << PtGrammarParser.T__16) | (1 << PtGrammarParser.T__17) | (1 << PtGrammarParser.T__18) | (1 << PtGrammarParser.T__19) | (1 << PtGrammarParser.T__20) | (1 << PtGrammarParser.T__21) | (1 << PtGrammarParser.T__22) | (1 << PtGrammarParser.T__23) | (1 << PtGrammarParser.T__24) | (1 << PtGrammarParser.T__25) | (1 << PtGrammarParser.TERMINAL_NUMERO) | (1 << PtGrammarParser.TERMINAL_IDENTIFICADOR) | (1 << PtGrammarParser.WHITESPACE) | (1 << PtGrammarParser.NEWLINE))) != 0):
-                self.state = 182
-                _la = self._input.LA(1)
-                if _la <= 0 or _la==PtGrammarParser.T__2:
-                    self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 187
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-
-            self.state = 188
-            self.match(PtGrammarParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1462,9 +1442,9 @@ class PtGrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 190
+            self.state = 183
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__3) | (1 << PtGrammarParser.T__4) | (1 << PtGrammarParser.T__5) | (1 << PtGrammarParser.T__6) | (1 << PtGrammarParser.T__7) | (1 << PtGrammarParser.T__8))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__2) | (1 << PtGrammarParser.T__3) | (1 << PtGrammarParser.T__4) | (1 << PtGrammarParser.T__5) | (1 << PtGrammarParser.T__6) | (1 << PtGrammarParser.T__7))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1506,9 +1486,9 @@ class PtGrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 192
+            self.state = 185
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__9) | (1 << PtGrammarParser.T__10) | (1 << PtGrammarParser.T__11) | (1 << PtGrammarParser.T__12))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PtGrammarParser.T__8) | (1 << PtGrammarParser.T__9) | (1 << PtGrammarParser.T__10) | (1 << PtGrammarParser.T__11))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1549,8 +1529,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_fim_de_instrucao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 194
-            self.match(PtGrammarParser.T__13)
+            self.state = 187
+            self.match(PtGrammarParser.T__12)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1587,8 +1567,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_operador_atribuicao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 196
-            self.match(PtGrammarParser.T__14)
+            self.state = 189
+            self.match(PtGrammarParser.T__13)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1625,8 +1605,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_abre_parenteses)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 198
-            self.match(PtGrammarParser.T__15)
+            self.state = 191
+            self.match(PtGrammarParser.T__14)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1663,8 +1643,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 52, self.RULE_fecha_parenteses)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 200
-            self.match(PtGrammarParser.T__16)
+            self.state = 193
+            self.match(PtGrammarParser.T__15)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1701,8 +1681,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 54, self.RULE_abre_chaves)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 202
-            self.match(PtGrammarParser.T__17)
+            self.state = 195
+            self.match(PtGrammarParser.T__16)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1739,8 +1719,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 56, self.RULE_fecha_chaves)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 204
-            self.match(PtGrammarParser.T__18)
+            self.state = 197
+            self.match(PtGrammarParser.T__17)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1777,8 +1757,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 58, self.RULE_faca)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 206
-            self.match(PtGrammarParser.T__19)
+            self.state = 199
+            self.match(PtGrammarParser.T__18)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1815,8 +1795,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 60, self.RULE_enquanto)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 208
-            self.match(PtGrammarParser.T__20)
+            self.state = 201
+            self.match(PtGrammarParser.T__19)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1853,8 +1833,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 62, self.RULE_se)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 210
-            self.match(PtGrammarParser.T__21)
+            self.state = 203
+            self.match(PtGrammarParser.T__20)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1891,8 +1871,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 64, self.RULE_senao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 212
-            self.match(PtGrammarParser.T__22)
+            self.state = 205
+            self.match(PtGrammarParser.T__21)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1929,8 +1909,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 66, self.RULE_entrada_de_texto)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 214
-            self.match(PtGrammarParser.T__23)
+            self.state = 207
+            self.match(PtGrammarParser.T__22)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1967,8 +1947,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 68, self.RULE_entrada_numerica)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 216
-            self.match(PtGrammarParser.T__24)
+            self.state = 209
+            self.match(PtGrammarParser.T__23)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2005,8 +1985,8 @@ class PtGrammarParser ( Parser ):
         self.enterRule(localctx, 70, self.RULE_imprima)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 218
-            self.match(PtGrammarParser.T__25)
+            self.state = 211
+            self.match(PtGrammarParser.T__24)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

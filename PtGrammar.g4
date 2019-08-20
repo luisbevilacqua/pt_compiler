@@ -32,8 +32,8 @@ entrada:                        entrada_de_texto | entrada_numerica;
 // LEXER
 numero :                        TERMINAL_NUMERO;
 identificador :                 TERMINAL_IDENTIFICADOR;
+texto :                         TERMINAL_TEXTO;
 tipo :                          ('número'|'texto');
-texto :                         '"' ~'"'* '"';
 operador_binario :              ('>'|'<'|'>='|'<='|'<>'|'=');
 operador_aritmetico :           ('+'|'-'|'*'|'/');
 fim_de_instrucao :              '.';
@@ -52,5 +52,6 @@ imprima:                        'mostre';
 
 TERMINAL_NUMERO :               [0-9]+(','[0-9]+)? ;
 TERMINAL_IDENTIFICADOR :        [a-zA-Z]([a-zA-Z0-9_])*;
+TERMINAL_TEXTO :                '"' ~'"'* '"';
 WHITESPACE :                    [ \t] -> skip;
 NEWLINE :                       '\r'? '\n' -> skip;
